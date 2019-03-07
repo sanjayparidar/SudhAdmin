@@ -55,7 +55,7 @@ this.route.params;
 }
 
 
-AddProduct(user: any)
+Uppdate(user: any)
   {
    const body = JSON.stringify(user);
    console.log(body);
@@ -76,7 +76,7 @@ AddProduct(user: any)
   onSubmit()
   {
     this.router.navigate(['orderhistory']);
-    this.AddProduct (this.userModel)
+    this.Uppdate (this.userModel)
     .subscribe(res=>{
       console.log(res)
     })

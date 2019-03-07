@@ -49,15 +49,15 @@ Deleteproduct(id)
   return this._http.get('https://sheltered-woodland-33544.herokuapp.com/admin_viewproduct/update/'+id )
  }
 
- Updateproduct( user: any )
- {
-  const body = JSON.stringify(user);
-  const header = new Headers();
-  header.append("content-Type", "application/json" );
-  console.log( user );
-  return this._http.post('https://sheltered-woodland-33544.herokuapp.com/admin_addproduct/update ' , user ,{responseType:'json'})
+//  Updateproduct( user: any )
+//  {
+//   const body = JSON.stringify(user);
+//   const header = new Headers();
+//   header.append("content-Type", "application/json" );
+//   console.log( user );
+//   return this._http.post('https://sheltered-woodland-33544.herokuapp.com/admin_addproduct/update ' , user ,{responseType:'json'})
 
- } 
+//  } 
 
 
  Userdetail()
@@ -81,7 +81,7 @@ Deleteproduct(id)
 
  DeletePromo(id)
  {
-   
+
    return this._http.get('https://sheltered-woodland-33544.herokuapp.com/viewpromo/delete/'+id)
  }
 
