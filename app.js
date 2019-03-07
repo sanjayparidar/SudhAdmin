@@ -3,8 +3,8 @@ var app=express();
 var path=require("path");
 app.use(express.static(__dirname +"/dist/Sudhadmin"));
 
-app.get("/*",function(req,res){
-    res.sendFile("index.html");
+app.get("/",function(req,res){
+    res.sendFile("/index.html");
 });
 app.listen(process.env.PORT || 3000,function(){
     console.log("server")
