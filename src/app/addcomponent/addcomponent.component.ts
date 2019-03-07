@@ -47,7 +47,7 @@ req:any;
 
   const vinay =  fb;
    console.log( user );
-   return this._http.post('http://sheltered-woodland-33544.herokuapp.com/admin_addproduct' , vinay  )
+   return this._http.post('https://sheltered-woodland-33544.herokuapp.com/admin_addproduct' , vinay  )
   }
 
   onSubmit(){
