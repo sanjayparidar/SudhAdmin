@@ -55,6 +55,7 @@ req:any;
    this.AddProduct(this.userModel)
    .subscribe(res=>{
      this.userModel  = {name:'', price:'', category:'', discount: ''}
+     alert('your product is add !! :-')
     console.log(res)
    },
    error =>{
