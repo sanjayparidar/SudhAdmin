@@ -25,7 +25,7 @@ req:any;
 
   ngOnInit() {
   }
-  userModel = {name:'', price:'', category:'', discount: '', avatar:''}
+  userModel = {name:'', price:'', category:'', discount: ''}
 
  
   onFileSelected(event){
@@ -54,7 +54,7 @@ req:any;
    console.log(this.userModel)
    this.AddProduct(this.userModel)
    .subscribe(res=>{
-     this.userModel  = {name:'', price:'', category:'', discount: '', avatar:''}
+     this.userModel  = {name:'', price:'', category:'', discount: ''}
     console.log(res)
    },
    error =>{
