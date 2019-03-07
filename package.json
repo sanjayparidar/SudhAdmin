@@ -51,7 +51,7 @@
     "typescript": "~3.2.2"
   },
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.",
-  "main": "main-server.tss",
+  "main": "server.ts",
   "author": "",
   "license": "ISC"
 }
