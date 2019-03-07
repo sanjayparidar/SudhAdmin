@@ -68,7 +68,7 @@ AddProduct(user: any)
      fb.append('discount', this.userModel.discount)
         console.log('hhbhbhbhb',this.SelectedFile)
   const vinay =  fb
-   return this._http.post('http://sheltered-woodland-33544.herokuapp.com/admin_addproduct/update ' , vinay )
+   return this._http.post('https://sheltered-woodland-33544.herokuapp.com/admin_addproduct/update ' , vinay )
   }
 
 
