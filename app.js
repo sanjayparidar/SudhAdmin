@@ -5,6 +5,6 @@ app.get("/",function(req,res){
     res.sendFile(__dirname+"/../dist/SudhAdmin/index.html")
 });
 
-app.listen(process.env.PORT || 4200,function(){
+app.listen(process.env.PORT || 3000,function(){
     console.log("server")
 });
