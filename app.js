@@ -1,10 +1,10 @@
 var express=require("express");
 var app=express();
 var path=require("path");
-app.use(express.static('build'));
+app.use(express.static(__dirname +"/dist/Sudhadmin"));
 
 app.get("/*",function(req,res){
-    res.sendFile("dist/SudhAdmin/index.html");
+    res.sendFile("index.html");
 });
 app.listen(process.env.PORT || 3000,function(){
     console.log("server")
