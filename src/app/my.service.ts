@@ -25,7 +25,7 @@ import { analyzeAndValidateNgModules, identifierModuleUrl } from '@angular/compi
     const header = new Headers();
     header.append("content-Type", "application/json" );
     console.log( user );
-    return this._http.post('http://sheltered-woodland-33544.herokuapp.com/adminpanel' , user)
+    return this._http.post('https://sheltered-woodland-33544.herokuapp.com/adminpanel' , user)
     console.log(body);
  }
 
@@ -34,19 +34,19 @@ import { analyzeAndValidateNgModules, identifierModuleUrl } from '@angular/compi
  ViewProduct()
  {
 
-   return this._http.get('http://sheltered-woodland-33544.herokuapp.com/admin_viewproduct')
+   return this._http.get('https://sheltered-woodland-33544.herokuapp.com/admin_viewproduct')
  }
 
 Deleteproduct(id)
 {
  
-   return this._http.get(' http://sheltered-woodland-33544.herokuapp.com/admin_viewproduct/delete/'+id)
+   return this._http.get(' https://sheltered-woodland-33544.herokuapp.com/admin_viewproduct/delete/'+id)
 }
 
  ButtonUpdate( id){
  
 
-  return this._http.get('http://sheltered-woodland-33544.herokuapp.com/admin_viewproduct/update/'+id )
+  return this._http.get('https://sheltered-woodland-33544.herokuapp.com/admin_viewproduct/update/'+id )
  }
 
  Updateproduct( user: any )
@@ -55,14 +55,14 @@ Deleteproduct(id)
   const header = new Headers();
   header.append("content-Type", "application/json" );
   console.log( user );
-  return this._http.post('http://sheltered-woodland-33544.herokuapp.com/admin_addproduct/update ' , user ,{responseType:'json'})
+  return this._http.post('https://sheltered-woodland-33544.herokuapp.com/admin_addproduct/update ' , user ,{responseType:'json'})
 
  } 
 
 
  Userdetail()
  {
-   return this._http.get('http://sheltered-woodland-33544.herokuapp.com/admin_alluser')
+   return this._http.get('https://sheltered-woodland-33544.herokuapp.com/admin_alluser')
  }
 
  Promocode(user)
@@ -71,17 +71,18 @@ Deleteproduct(id)
       const header = new Headers();
       console.log(body)
       header.append("content-Type", "application/json" );
-      return this._http.post('http://sheltered-woodland-33544.herokuapp.com/addpromo', user)
+      return this._http.post('https://sheltered-woodland-33544.herokuapp.com/addpromo', user)
  }
 
  ViewPromo()
  {
-   return this._http.get('http://sheltered-woodland-33544.herokuapp.com/viewpromo')
+   return this._http.get('https://sheltered-woodland-33544.herokuapp.com/viewpromo')
  }
 
  DeletePromo(id)
  {
-   return this._http.get('http://sheltered-woodland-33544.herokuapp.com/viewpromo/delete/'+id)
+   
+   return this._http.get('https://sheltered-woodland-33544.herokuapp.com/viewpromo/delete/'+id)
  }
 
 
