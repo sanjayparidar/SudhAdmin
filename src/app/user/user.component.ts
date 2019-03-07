@@ -75,9 +75,10 @@ Uppdate(user: any)
 
   onSubmit()
   {
-    this.router.navigate(['orderhistory']);
+   
     this.Uppdate (this.userModel)
     .subscribe(res=>{
+      this.router.navigate(['orderhistory']);
       console.log(res)
     })
   }
