@@ -40,6 +40,7 @@ export class PromocodeComponent implements OnInit {
     this.myservices.Promocode(this.userModel)
     .subscribe(res=>{
       console.log(res)
+      alert('your Promo card is add !! :-')
       this.userModel = {pcode:'', pcodedis:'', pcsdate:'', pcedate:''}
   //   this.userModel.pcode = '';
   //  // this.userModel ={res:''}
