@@ -1,0 +1,132 @@
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+  <div id="wrapper">
+
+    <app-sidebar></app-sidebar>
+ 
+ 
+  
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+  
+          <app-header></app-header>
+        
+          <div>
+              <table class="table table-striped">
+                <tr>
+                  <th>No</th>
+              
+                  
+                  <th>Category</th>
+                  <th>Quantity</th>
+                  
+                  <th>Role</th>
+                </tr>
+           
+         
+                <tr *ngFor="let u of table, let i = index;">
+                  <td>{{i+1}}</td>
+                  
+                  
+                  <td>{{u.category}} Litter</td>
+                  <td>{{u.Quentity}} Bottle</td>
+                  <!-- <td ><img *ngIf src="https://sheltered-woodland-33544.herokuapp.com/product_image/{{u.imgage}}" height="100px" width="100px"></td> -->
+                  
+                  <td>
+                    <!-- <button type="button" style="color: whitesmoke;" class="btn btn-danger" (click)="edit(u._id)" >Edit</button> -->
+                     <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+                  </td>
+                  <td>
+                
+                </td>
+                </tr>
+              
+              
+              </table>
+ 
+            </div>
+      </div>
+    </div>
+    </div>
+    
+  
+   <!-- // {{u.https://sheltered-woodland-33544.herokuapp.com/product_image/}}  -->
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- <div>
+   <table class="table table-striped">
+     <tr>
+       <th>No</th>
+       <th> Name</th>
+       <th>Price</th>
+       <th>Category</th>
+       <th>Discount</th>
+       <th>Image</th>
+       <th>Role</th> <th colspan="2">Actions</th>
+     </tr>
+     <tr *ngFor="let u of table">
+       <td>{{u.i+1}}</td>
+       <td>{{u.name}}</td>
+       <td>{{u.price}}</td>
+       <td>{{u.category}}</td>
+       <td>{{u.discount}}</td>
+       <td><img [src]='u.img'  height="100px" width="100px"></td>
+       <td>
+         <button type="button" style="color: #4CAF50;" class="glyphicon glyphicon-pencil" (click)="onEditUser(u._id)" >Edit</button>
+       </td>
+       <td>
+         <button type="button" style="color: red;" class="glyphicon glyphicon-trash" (click)="deleteuser(u._id)" >Delete</button>
+       </td>
+     </tr>
+   </table>
+ 
+ </div> -->

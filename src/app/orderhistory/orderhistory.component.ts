@@ -13,6 +13,8 @@ import { AuthService } from '../auth.service';
 export class OrderhistoryComponent implements OnInit {
 res : table [] = [];
 table : any;
+public user={"category":"",_id:""};
+
 private bodyText: string;
 
 
@@ -35,7 +37,7 @@ private bodyText: string;
 
   
   onEditUser(id){
-    console.log(id)
+    
     this.myservices.ButtonUpdate(id)
     .subscribe(res => {
       this.table = res
@@ -47,14 +49,15 @@ this.router.navigate(['/users',id]);
   }
 
 myFunction(id) {
-    var txt;
-    if (confirm("Press a button!")) {
-      this.table.splice(id, 1);
-      txt = "You pressed OK!";
-      const i =   this.myservices.Deleteproduct(id)
+    
+  var index= this.table.findIndex(i => i._id === id);
+    console.log(index)
+    this.table.splice(index,1)
+      
+       this.myservices.Deleteproduct(id)
       .subscribe(res =>  {
        this.table = res
-       this.router.navigate(['/orderhistory']);
+       
        console.log(res)
       
      },
@@ -63,9 +66,7 @@ myFunction(id) {
         
        }
      );
-    } else {
-      txt = "You pressed Cancel!";
-    }
+   
   }
 
   // deleteuser(id){
@@ -94,13 +95,12 @@ myFunction(id) {
     this.router.navigate(['']);
   }
 
-  openModal(id: string) {
-    this.myservices.open(id);
-}
+  deleteconfirmation(u){
+     this.user=u
+     console.log(this.user,"hello ==========================")
+  }
 
-closeModal(id: string) {
-    this.myservices.close(id);
-}
+  
 
 
 }

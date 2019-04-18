@@ -18,17 +18,31 @@ import { PromocodeComponent } from './promocode/promocode.component';
 import { PcodeviewComponent } from './pcodeview/pcodeview.component';
 
 import { GrdFilterPipe } from './grd-filter.pipe';
+import { HeaderComponent } from './header/header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { QuantityComponent } from './quantity/quantity.component';
+import { ViewquantityComponent } from './viewquantity/viewquantity.component';
+import { TestComponent } from './test/test.component';
+import { CanActivate } from '@angular/router/src/utils/preactivation';
+import { VieworderComponent } from './vieworder/vieworder.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 
 const appRoutes: Routes = [
 
   { path: '', component: LoginComponent },
+  {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
   { path: 'addcard', component: AddcomponentComponent , canActivate: [AuthGuard]},
   { path: 'orderhistory', component: OrderhistoryComponent, canActivate: [AuthGuard] },
   { path: 'users/:id', component: UserComponent,  canActivate: [AuthGuard] },
   { path: 'Userdetail', component: UserdetailComponent, canActivate: [AuthGuard] },
   { path: 'promocode', component: PromocodeComponent, canActivate: [AuthGuard] },
   { path: 'ViewPromocoded', component: PcodeviewComponent, canActivate: [AuthGuard] },
+  {path:'quantity',component:QuantityComponent,canActivate:[AuthGuard]},
+  {path:'viewquantity',component:ViewquantityComponent,canActivate:[AuthGuard]},
+  {path:'test',component:TestComponent,canActivate:[AuthGuard]},
+  {path:'vieworder',component:VieworderComponent,canActivate:[AuthGuard]}
  
 ];
 
@@ -43,7 +57,14 @@ const appRoutes: Routes = [
     UserdetailComponent,
     PromocodeComponent,
     PcodeviewComponent,
-    GrdFilterPipe
+    GrdFilterPipe,
+    HeaderComponent,
+    SidebarComponent,
+    QuantityComponent,
+    ViewquantityComponent,
+    TestComponent,
+    VieworderComponent,
+    DashboardComponent
   
    
   ],
@@ -54,8 +75,14 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    
+
+    
+  
 
   ],
+  
+ 
   providers: [Myservice, AuthGuard],
 
   bootstrap: [AppComponent]

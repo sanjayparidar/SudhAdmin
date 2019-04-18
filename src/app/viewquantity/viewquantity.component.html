@@ -1,0 +1,175 @@
+
+
+
+
+  <div id="wrapper">
+
+      <app-sidebar></app-sidebar>
+         <!-- modal -->
+         <div>
+          
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Quentity</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  
+                  
+                  <p></p>
+                   
+                  <form class="newForm" #newForm="ngForm">
+                   
+        
+                    <div class="login-form-body">
+                        
+        
+                       
+        
+                      
+        
+                        <div class="form-gp">
+                            <label for="Quentity"><b> Product Discount</b></label>
+                            <input type="number" required #number="ngModel" class="form-control" name="Quentity" placeholder="Quentity"  [(ngModel)]="userModel.Quentity">
+                        </div>
+       
+                       
+       
+                       <!-- <div>
+                        <img src="https://sheltered-woodland-33544.herokuapp.com/product_image/{{userModel.image}}" >
+                       </div> -->
+                        <!-- <div class="submit-btn-area">
+                            <button type="submit"  class="btn btn-primary center-block"  >Submit</button>
+                        </div> -->
+                    
+                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <!-- <button type="button" class="btn btn-primary">Delete</button> -->
+                  <button type="button" class="btn btn-primary center-block" data-dismiss="modal" (click)="onSubmit(userModel)" >Update</button>
+                   <!-- <button type="submit" style="color: whitesmoke;" class="btn btn-danger" data-dismiss="modal">Edit</button> -->
+                </div>
+              </div>
+              </form>
+
+                </div>
+                
+              </div>
+            </div>
+          </div>
+         </div>
+         <!-- modal -->
+   
+    
+        <div id="content-wrapper" class="d-flex flex-column">
+          <div id="content">
+    
+            <app-header></app-header>
+            
+          
+            <div>
+                <table class="table table-striped">
+                  <tr>
+                    <th>No</th>
+                
+                    
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    
+                    <th>Role</th>
+                  </tr>
+             
+           
+                  <tr *ngFor="let u of table, let i = index;">
+                    <td>{{i+1}}</td>
+                    
+                    
+                    <td>{{u.category}} Litter</td>
+                    <td>{{u.Quentity}} Bottle</td>
+                    <!-- <td ><img *ngIf src="https://sheltered-woodland-33544.herokuapp.com/product_image/{{u.imgage}}" height="100px" width="100px"></td> -->
+                    
+                    <td>
+                      <!-- <button type="button" style="color: whitesmoke;" class="btn btn-danger" (click)="edit(u._id)" >Edit</button> -->
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" (click)="editask(u)">
+                        Edit
+                      </button>
+                    </td>
+                    
+                  </tr>
+                
+                
+                </table>
+   
+              </div>
+        </div>
+      </div>
+      </div>
+      
+    
+     <!-- // {{u.https://sheltered-woodland-33544.herokuapp.com/product_image/}}  -->
+    
+    
+    
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   <!-- <div>
+     <table class="table table-striped">
+       <tr>
+         <th>No</th>
+         <th> Name</th>
+         <th>Price</th>
+         <th>Category</th>
+         <th>Discount</th>
+         <th>Image</th>
+         <th>Role</th> <th colspan="2">Actions</th>
+       </tr>
+       <tr *ngFor="let u of table">
+         <td>{{u.i+1}}</td>
+         <td>{{u.name}}</td>
+         <td>{{u.price}}</td>
+         <td>{{u.category}}</td>
+         <td>{{u.discount}}</td>
+         <td><img [src]='u.img'  height="100px" width="100px"></td>
+         <td>
+           <button type="button" style="color: #4CAF50;" class="glyphicon glyphicon-pencil" (click)="onEditUser(u._id)" >Edit</button>
+         </td>
+         <td>
+           <button type="button" style="color: red;" class="glyphicon glyphicon-trash" (click)="deleteuser(u._id)" >Delete</button>
+         </td>
+       </tr>
+     </table>
+   
+   </div> -->

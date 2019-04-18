@@ -12,6 +12,9 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class PcodeviewComponent implements OnInit {
 table:any;
 splice:any;
+public promocode={"pcode":"",_id:""};
+
+
 private fieldArray: Array<any> = [];
   constructor( private myservices:Myservice, public authService: AuthService, private route: ActivatedRoute, private router: Router) { }
 
@@ -28,29 +31,22 @@ private fieldArray: Array<any> = [];
 
 
   myFunction(id){
-    var view;
-    if(confirm("Please Conforme Your Delete this..!")){
-      view = "You pressed OK!";
-      this.table.splice(id, 1);
-      const i =   this.myservices.DeletePromo(id)
+    
+    
+    var index= this.table.findIndex(i => i._id === id);
+    console.log(index)
+    this.table.splice(index,1)
+      
+      this.myservices.DeletePromo(id)
       .subscribe(res=>{
-       console.log(i)
         this.table = res
-       this.table.splice(i,0)
-       console.log('dhbcdhbcdhbcdh', this.table)
-        console.log(res)
-        console.log('hello')
-        alert('Are you sure Delete This  !! :-')
       },
       
       error =>{
         console.log(error)
       }
       )
-    }
-    else {
-      view = "You pressed Cancel!";
-    }
+   
   }
 
 
@@ -68,12 +64,10 @@ private fieldArray: Array<any> = [];
   //    })
      
   // }
-  
+deleteconfirmation(u){
+  this.promocode=u
+  console.log(this.promocode)
 
-  logout(): void {
-    console.log("Logout");
-    this.authService.logout();
-    this.router.navigate(['']);
-  }
+}
 
 }

@@ -108,4 +108,24 @@ close(id: string) {
   modal.close();
 }
 
-  }
+addquantity(user){
+  return this._http.post('https://sheltered-woodland-33544.herokuapp.com/admin_numberofbottle',user)
+
+}
+
+viewquantity(){
+  return this._http.get('https://sheltered-woodland-33544.herokuapp.com/admin_numberofbottle')
+}
+editquantity(data){
+  const fb = new FormData();
+   fb.append("id",data._id)
+   fb.append("Quentity",data.Quentity)
+  return this._http.post('https://sheltered-woodland-33544.herokuapp.com/admin_numberofbottle/edit',fb)
+}
+
+vieworder(){
+  return this._http.get('https://sheltered-woodland-33544.herokuapp.com/order/viewallorder')
+}
+
+
+}

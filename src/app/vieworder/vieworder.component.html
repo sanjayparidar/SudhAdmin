@@ -1,0 +1,50 @@
+
+  <div id="wrapper">
+
+    <app-sidebar></app-sidebar>
+ 
+     
+  
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+  
+          <app-header></app-header>
+       
+        
+          <div>
+              <table class="table table-striped">
+                <tr>
+                  <th>No</th>
+                  <th> orderid</th>
+                  <th>Product Name</th>
+                  <th>total</th>
+                  
+                  <th>discounttotal</th>
+                  <th>date</th>
+                  <th>paymentStatus</th>
+                </tr>
+           
+         
+                <tr *ngFor="let u of table, let i = index;">
+                  <td>{{i+1}}</td>
+                  <td>{{u.orderid}}</td>
+                  <td>Shoudh H2O</td>
+                  <td>{{u.total}}</td>
+                  <td>{{u.discounttotal}}</td>
+                  <td>{{u.date}}</td>
+                  <td>{{u.paymentStatus}}</td>
+                  <!-- <td ><img *ngIf src="https://sheltered-woodland-33544.herokuapp.com/product_image/{{u.imgage}}" height="100px" width="100px"></td> -->
+                 
+                  
+          
+                  
+                </tr>
+              
+              
+              </table>
+ 
+            </div>
+      </div>
+    </div>
+    </div>
+    

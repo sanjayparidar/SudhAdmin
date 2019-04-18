@@ -38,7 +38,7 @@ users:any
       data => {
         this.users = data
         console.log('rfrfrf+++++++',this.users.username)
-        this.router.navigate(['orderhistory']);
+        this.router.navigate(['dashboard']);
         console.log(data);
         console.log("hello");
         localStorage.setItem('isLoggedIn', "true");
