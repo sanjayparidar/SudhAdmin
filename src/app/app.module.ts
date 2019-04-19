@@ -32,7 +32,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 const appRoutes: Routes = [
 
   { path: '', component: LoginComponent },
-  {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
+  {path:'dashboard',component:DashboardComponent},
   { path: 'addcard', component: AddcomponentComponent , canActivate: [AuthGuard]},
   { path: 'orderhistory', component: OrderhistoryComponent, canActivate: [AuthGuard] },
   { path: 'users/:id', component: UserComponent,  canActivate: [AuthGuard] },

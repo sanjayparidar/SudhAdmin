@@ -37,16 +37,25 @@ users:any
     .subscribe(
       data => {
         this.users = data
-        console.log('rfrfrf+++++++',this.users.username)
-        this.router.navigate(['dashboard']);
-        console.log(data);
-        console.log("hello");
-        localStorage.setItem('isLoggedIn', "true");
-        this.router.navigate([this.returnUrl]);
+        if(this.users.response==="success"){
+          console.log(this.users.result.name,"41 line response")
+          //  localStorage.setItem("username",this.users.result.name);
+           this.router.navigate(['dashboard']);
+          //  this.router.navigate([this.returnUrl]);
+        }else{
+          alert('Check Your User_name and Password !! :-')
+        }
+        
+        // console.log('rfrfrf+++++++',this.users.username)
+        // this.router.navigate(['dashboard']);
+        // console.log(data);
+        // console.log("hello");
+        // localStorage.setItem('isLoggedIn', "true");
+        // this.router.navigate([this.returnUrl]);
       },
       error => {
-        console.log(error);
-        alert('Check Your User_name and Password !! :-')
+       
+        
       }
     );
     }
