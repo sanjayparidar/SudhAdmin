@@ -38,6 +38,7 @@ users:any
       data => {
         this.users = data
         if(this.users.response==="success"){
+          
           console.log(this.users.result.name,"41 line response")
           //  localStorage.setItem("username",this.users.result.name);
            this.router.navigate(['dashboard']);
