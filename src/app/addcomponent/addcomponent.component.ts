@@ -19,11 +19,13 @@ req:any;
 
 
 @ViewChild('fileInput') fileInput: ElementRef;
-
+public category: Array<any> = [];
   constructor(private myServices : Myservice, private _http : HttpClient, private fb: FormBuilder, private router: Router, public authService: AuthService) { }
 
 
   ngOnInit() {
+    this.category=["add category",5,10]
+
   }
   userModel = {name:'', price:'', category:'', discount: ''}
 

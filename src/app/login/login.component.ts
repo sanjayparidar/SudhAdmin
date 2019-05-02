@@ -20,7 +20,7 @@ users:any
   password: any
  
 
-  constructor(  private myServices : Myservice, private router: Router,  public authService: AuthService, private formBuilder: FormBuilder) { }
+  constructor(  private myServices : Myservice, private router: Router , public authService: AuthService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
   }
@@ -40,6 +40,7 @@ users:any
         if(this.users.response==="success"){
           
           console.log(this.users.result.name,"41 line response")
+          this.authService.sendToken("userLoggedin")
           //  localStorage.setItem("username",this.users.result.name);
            this.router.navigate(['dashboard']);
           //  this.router.navigate([this.returnUrl]);

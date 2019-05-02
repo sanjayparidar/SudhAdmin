@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 
@@ -8,11 +9,21 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(private myRoute:Router) { }
 
-  logout(): void {
-    localStorage.setItem('isLoggedIn', "false");
+  sendToken(token: string) {
+    localStorage.setItem("LoggedInUser", token)
+  }
+  getToken() {
+    return localStorage.getItem("LoggedInUser")
+  }
+  isLoggedIn() {
+    return this.getToken() !== null;
+  }
+  logout() {
+    localStorage.removeItem("LoggedInUser");
+    this.myRoute.navigate(["Login"]);
+  }
 
   } 
 
-}

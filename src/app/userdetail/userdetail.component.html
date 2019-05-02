@@ -22,8 +22,9 @@
                   <th>Adress</th>
 
                 </tr>
+                {{searchText}}
                 <!-- <table *ngFor="let emp of customerData | grdFilter: {name: searchText, Age:searchText,  blog: searchText}; let i=index;"></table> -->
-                <tr *ngFor="let u of table |  grdFilter: {name: searchText, mobile: searchText, city: searchText}; let i = index;">
+                <tr *ngFor="let u of table | grdFilter: { name: searchText, mobile: searchText, city: searchText}; let i = index;">
                   <td style="width: 5%;">{{i+1}}</td>
                   <td style="width: 5%;">{{u.name}}</td>
                   <td style="width: 5%;">{{u.mobile}}</td>

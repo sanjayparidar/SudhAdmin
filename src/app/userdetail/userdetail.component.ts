@@ -18,7 +18,7 @@ export class UserdetailComponent implements OnInit {
 
   ngOnInit() {
     console.log('hello')
-    return this._http.get('http://sheltered-woodland-33544.herokuapp.com/admin_alluser')
+    return this._http.get('https://sheltered-woodland-33544.herokuapp.com/admin_alluser')
     .subscribe(res=>{
       this.table = res
       console.log(res)

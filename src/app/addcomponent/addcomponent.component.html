@@ -34,26 +34,30 @@
    
                    <div class="form-gp">
                        <label for="email"><b> Product Price</b></label>
-                       <input type="text" required #price="ngModel" class="form-control" name="price"  placeholder="Price"   [(ngModel)]="userModel.price">
+                       <input type="number" required #price="ngModel" class="form-control" name="price"  placeholder="Price"   [(ngModel)]="userModel.price">
                       
                    </div>
    
                    <div class="form-gp">
                        <label for="email"><b> Product Category</b></label>
-                       <input type="text" required #category="ngModel" class="form-control" name="category" placeholder="category"   [(ngModel)]="userModel.category">
-                       <option *ngFor="let category of category" [value]="category" [selected]="category.selected == true">{{category}} Litter</option>
+                       <!-- <input type="text" required #category="ngModel" class="form-control" name="category" placeholder="category"   [(ngModel)]="userModel.category"> -->
+                       <select class="form-control" required #quantity="ngModel" name="category" [(ngModel)]="userModel.category">
+                        <!-- <input type="text" required #category="ngModel" class="form-control" name="category" placeholder="category"   [(ngModel)]="userModel.category"> -->
+                        <option *ngFor="let category of category"[value]="category" [selected]="category.selected == true">{{category}} Litter</option>
+                    </select>
 
                    </div>
    
                    <div class="form-gp">
-                       <label for="email"><b> Product Discount</b></label>
-                       <input type="text" required #discount="ngModel" class="form-control" name="discount" placeholder="Discount"  [(ngModel)]="userModel.discount">
+                       <label for="product"><b> Product Discount</b></label>
+                       <input type="number" required #discount="ngModel" class="form-control" name="discount" placeholder="Discount"  [(ngModel)]="userModel.discount">
                        
                    </div>
    
                    <div class="form-group">
                        <label for="avatar">Add your image</label>
-                       <input type="file" (change)="onFileSelected($event)" >
+                       <input type="file" (change)="onFileSelected($event)">
+                       <!-- [ngModel]="fileContent" name="file" #file="ngModel" required  -->
                      </div>
                    <div class="submit-btn-area">
                        <button type="submit"  class="btn btn-primary center-block" [disabled]="newForm.form.invalid">Submit</button>
