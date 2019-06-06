@@ -38,15 +38,18 @@
             </div>
            </div>
            <!-- modal -->
-
+            <div class="container">
+              <h3>View Promo</h3>
+              <hr>
+            </div>
           <div>
               <table class="table table-striped">
                 <tr>
                   <th>No</th>
                   <th> Promocode</th>
-                  <th>Promodode_Discount</th>
-                  <th>Promocode_StartDate</th>
-                  <th>Promocode_EndDate</th>
+                  <th>Discount in %</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
                   <th>Action</th>
                 </tr>
            
@@ -54,7 +57,7 @@
                 <tr *ngFor="let u of table, let i = index;">
                   <td>{{i+1}}</td>
                   <td>{{u.pcode}}</td>
-                  <td>{{u.pcodedis}}</td>
+                  <td>{{u.pcodedis}} %</td>
                   <td>{{u.pcsdate}}</td>
                   <td>{{u.pcedate}}</td>
                   <td>

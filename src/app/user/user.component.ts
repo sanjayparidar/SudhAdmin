@@ -32,7 +32,7 @@ req:any;
 
   onFileSelected(event){
     this.SelectedFile = <File>event.target.files[0];
-    console.log(event)
+  
   }
   
 
@@ -44,9 +44,6 @@ this.route.params;
     this.myservice.ButtonUpdate(id)
     .subscribe(res=>{
       this.users = res
-   
-      console.log('jjnjnjnjn', this.users.category)
-      console.log('jjnjnjnjn', this.users.image)
      // console.log('asdasdasdas',res)
     this.userModel = {name:this.users.name, price:this.users.price, category:this.users.category, discount:this.users.discount, id}
     this.userModel12 = { image:this.users.image}
@@ -55,45 +52,47 @@ this.route.params;
 }
 
 
-Uppdate(user: any)
-  {
-   const body = JSON.stringify(user);
-   console.log(body);
+ onSubmit() {
+   
    const fb = new FormData();
     fb.append('image', this.SelectedFile)
+    console.log(this.SelectedFile,"++++++++++++++++59++++++++++++++++++++++")
+
     fb.append('id', this.userModel.id);
      fb.append('name', this.userModel.name)
      fb.append('price', this.userModel.price)
      fb.append('category', this.userModel.category)
      fb.append('discount', this.userModel.discount)
-        console.log('hhbhbhbhb',this.SelectedFile)
-  const vinay =  fb
-   return this._http.post('https://sheltered-woodland-33544.herokuapp.com/admin_addproduct/update' , vinay )
+   return this._http.post('https://sheltered-woodland-33544.herokuapp.com/admin_addproduct/update' ,fb)
+   .subscribe(res=>{
+     console.log(res)
+    this.router.navigate(['/orderhistory'])
+   })
   }
 
 
 
-  onSubmit()
-  {
+  // onSubmit()
+  // {
    
-    this.Uppdate (this.userModel)
-    .subscribe(res=>{
-      this.router.navigate(['orderhistory']);
-      console.log(res)
-    })
-  }
+  //   this.Uppdate (this.userModel)
+  //   .subscribe(res=>{
+  //     this.router.navigate(['orderhistory']);
+  //     console.log(res)
+  //   })
+  // }
 
 
-  ngSubmit()
-  {
+  // ngSubmit()
+  // {
     
-  }
+  // }
 
-  logout(): void {
-    console.log("Logout");
-    this.authService.logout();
-    this.router.navigate(['']);
-  }
+  // logout(): void {
+  //   console.log("Logout");
+  //   this.authService.logout();
+  //   this.router.navigate(['']);
+  // }
 
 
 

@@ -19,12 +19,12 @@ req:any;
 
 
 @ViewChild('fileInput') fileInput: ElementRef;
-public category: Array<any> = [];
+public categorys: Array<any> = [];
   constructor(private myServices : Myservice, private _http : HttpClient, private fb: FormBuilder, private router: Router, public authService: AuthService) { }
 
 
   ngOnInit() {
-    this.category=["add category",5,10]
+    this.categorys=['Add Category',1,2,5,10,15,20]
 
   }
   userModel = {name:'', price:'', category:'', discount: ''}
@@ -41,7 +41,7 @@ public category: Array<any> = [];
    const body = JSON.stringify(user);
    console.log(body);
    const fb = new FormData();
-    fb.append('image', this.SelectedFile)
+     fb.append('image', this.SelectedFile)
      fb.append('name', this.userModel.name)
      fb.append('price', this.userModel.price)
      fb.append('category', this.userModel.category)

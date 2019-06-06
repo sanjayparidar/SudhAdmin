@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
  import { Myservice } from '../my.service'
 import { table } from './order'
 import { Router, ActivatedRoute } from '@angular/router';
@@ -56,11 +56,7 @@ myFunction(id) {
       
        this.myservices.Deleteproduct(id)
       .subscribe(res =>  {
-       this.table = res
-       
-       console.log(res)
-      
-     },
+       },
        error =>{
          console.log(error)
         
@@ -89,11 +85,6 @@ myFunction(id) {
 
 
   
-  logout(): void {
-    console.log("Logout");
-    this.authService.logout();
-    this.router.navigate(['']);
-  }
 
   deleteconfirmation(u){
      this.user=u

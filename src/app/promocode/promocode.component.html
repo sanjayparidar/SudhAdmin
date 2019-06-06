@@ -20,44 +20,39 @@
 
        <form action="/action_page.php">
          <div class="container">
-           <h1>Add Your Promo_Code</h1>
-           <p>Please fill </p>
+           <h3>Add Promo Code</h3>
            <hr>
  
            <form class="newForm" #newForm="ngForm" (ngSubmit)= "onSubmit()"  >
-             <div class="login-form-head">
-                 <h4>Add Your Promo_Code</h4>
-                 <p>Hello there, Add Promo_Code in and start managing your Admin Template</p>
-             </div>
- 
-             <div class="login-form-body">
+             
+                <div class="login-form-body">
                  <div class="form-gp">
-                     <label for="email"><b>Promo_Code____</b></label>
-                     <input type="text" required #pcode="ngModel" class="form-control" name="pcode" placeholder="Promo_Code"  [(ngModel)]="userModel.pcode">
+                     <label for="promo"><b>Promo Code</b></label>
+                     <input type="text" required #pcode="ngModel" class="form-control" name="pcode" placeholder="Promo Code"  [(ngModel)]="userModel.pcode">
                     
                  </div>
  
                  <div class="form-gp">
-                     <label for="email"><b> Promo_Code_Discount</b></label>
-                     <input type="text" required #pcodedis="ngModel" class="form-control" name="pcodedis"  placeholder="Promo_Code_Discount"   [(ngModel)]="userModel.pcodedis">
+                     <label for="email"><b> Promo Discount</b></label>
+                     <input type="text" required #pcodedis="ngModel" class="form-control" name="pcodedis"  placeholder="Prom Discount"   [(ngModel)]="userModel.pcodedis">
                      
                  </div>
  
                  <div class="form-gp">
-                     <label for="email"><b>Promo_Code_Start_Date</b></label>
+                     <label for="date"><b>Start Date</b></label>
                      <input type="date" required #pcsdate="ngModel" class="form-control" name="pcsdate" placeholder="Promo_Code_Start_Date"   [(ngModel)]="userModel.pcsdate">
                      
                  </div>
  
                  <div class="form-gp">
-                     <label for="email"><b>Promo_Code_End_Date</b></label>
+                     <label for="date"><b>End Date</b></label>
                      <input type="date" required #pcedate="ngModel" class="form-control" name="pcedate" placeholder="Promo_Code_End_Date"  [(ngModel)]="userModel.pcedate">
                     
                  </div>
- 
+                 <br>
                 
                  <div class="submit-btn-area">
-                     <button type="submit"  class="btn btn-primary center-block"  [disabled]="newForm.form.invalid">Submit</button>
+                     <button type="submit" class="btn btn-primary center-block"  [disabled]="newForm.form.invalid">Submit</button>
                  </div>
              </div>
          </form>

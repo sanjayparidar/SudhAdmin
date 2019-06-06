@@ -12,7 +12,7 @@
 
        
         <div class="container">
-          <h1>Add Quantity</h1>
+          <h3>Add Quantity</h3>
           
           <hr>
 
@@ -26,9 +26,9 @@
 
                 <div class="form-gp">
                     <label for="category"><b>Category</b></label>
-                    <select class="form-control" required #quantity="ngModel" name="category" [(ngModel)]="userModel.category">
+                    <select class="form-control" required  name="category" [(ngModel)]="userModel.category">
                     <!-- <input type="text" required #category="ngModel" class="form-control" name="category" placeholder="category"   [(ngModel)]="userModel.category"> -->
-                    <option *ngFor="let category of category"[value]="category" [selected]="category.selected == true">{{category}} Litter</option>
+                    <option *ngFor="let category of category"[value]="category">{{category}} Litter</option>
                 </select>
                 </div>
                
@@ -36,12 +36,12 @@
 
 
                 <div class="form-gp">
-                    <label for="quantity"><b>quantity</b></label>
-                    <input type="number" required #quantity="ngModel" class="form-control" name="quantity" placeholder="Quantity"  [(ngModel)]="userModel.quantity">
+                    <label for="quantity"><b>Quantity</b></label>
+                    <input type="number" required #quantity="ngModel" class="form-control" name="quantity" placeholder="Quantity"  [(ngModel)]="userModel.Quentity">
                     
                 </div>
                 
-                
+                <br>
                 <div class="submit-btn-area">
                     <button type="submit"  class="btn btn-primary center-block" [disabled]="newForm.form.invalid">Submit</button>
                 </div>
